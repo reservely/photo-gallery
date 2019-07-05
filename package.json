@@ -2,9 +2,12 @@
   "name": "photo-gallery",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "nodemon server.js",
+    "react-dev": "webpack -d --watch"
   },
   "repository": {
     "type": "git",
@@ -29,6 +32,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.2",
     "jest": "^24.8.0",
+    "nodemon": "^1.19.1",
     "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
   },
