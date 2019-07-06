@@ -1,5 +1,5 @@
 const AWS = require('aws-sdk');
-const config = require('../config.js');
+const config = require('../config/config.js');
 const request = require('request');
 
 AWS.config.update({accessKeyId: `${config.AWSAccessKeyId}`, secretAccessKey: `${config.AWSSecretKey}`});

@@ -1,5 +1,5 @@
 const request = require('request');
-const config = require('../pexelConfig.js');
+const config = require('../config/pexelConfig.js');
 
 let getImages = (callback) => {
 
@@ -12,12 +12,14 @@ let getImages = (callback) => {
 
   request.get(options,(error, response, body) => {
     if (!error && response.statusCode == 200) {
-      var info = JSON.parse(body);
-      var images = info.photos.map(photo => photo.url);
-      callback(images);
+      console.log(response.headers)
+      //var info = JSON.parse(body);
+      //var images = info.photos.map(photo => photo.url);
+      //callback(images);
     }
   });
 };
 
+getImages(()=>{});
 //getImages((data)=> console.log(data));
 module.exports.getImages = getImages;
