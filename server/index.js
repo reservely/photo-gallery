@@ -14,7 +14,8 @@ app.get('/:restaurant_id/images', (req, res) => {
   db.find({ restaurant_id: restaurant_id }, '-_id -__v', (err, data) => {
     if (err) console.log('error');
     res.send(data);
-  }).limit(10)
+  })
 });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
