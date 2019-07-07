@@ -11,10 +11,10 @@ s3 = new AWS.S3({
 });
 
 var params = {
-  Bucket: 'reversly-photos'
+  Bucket: 'reservly-photos'
 }
 
 s3.listObjects(params, function (err, data) {
   if (err) throw err;
-  console.log(data.Contents.map(x => 'https://reversly-photos.s3-us-west-2.amazonaws.com/' + x.Key));
+  console.log(data.Contents.map(x => 'https://reservly-photos.s3-us-west-1.amazonaws.com/' + x.Key));
 });

@@ -9,7 +9,7 @@ function create() {
     let randomInt = Math.floor(Math.random() * Math.floor(101));
     arr.push({
       restaurant_id: randomInt,
-      image_url: 'https://reversly-photos.s3-us-west-2.amazonaws.com/' + i + '.jpg'
+      image_url: 'https://reservly-photos.s3-us-west-1.amazonaws.com/' + i + '.jpg'
     });
   }
 

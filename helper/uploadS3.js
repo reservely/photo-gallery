@@ -21,7 +21,7 @@ function put_from_url(key, id, callback) {
       return callback(err, res);
 
     s3.putObject({
-      Bucket: 'reversly-photos',
+      Bucket: 'reservly-photos',
       Key: `${key}.jpg`,
       ContentType: res.headers['content-type'],
       Body: body
