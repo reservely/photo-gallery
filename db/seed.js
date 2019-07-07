@@ -6,7 +6,7 @@ function create() {
 
   //240 as the limit because there are 239 photos in S3
   for (let i = 0; i < 240; i++) {
-    let randomInt = Math.floor(Math.random() * Math.floor(101));
+    const randomInt = Math.floor(Math.random() * Math.floor(101));
     arr.push({
       restaurant_id: randomInt,
       image_url: 'https://reservly-photos.s3-us-west-1.amazonaws.com/' + i + '.jpg'
@@ -21,7 +21,7 @@ const sampleurls = create();
 const insertImages = () => {
   Image.insertMany(sampleurls)
     .then(() => {
-      console.log('successfully loaded')
+      console.log('successfully loaded');
       db.close();
     })
     .catch(() => {

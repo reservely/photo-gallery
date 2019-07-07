@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/images', {useNewUrlParser: true});
+
+mongoose.connect('mongodb://localhost/images', { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
 const imageSchema = new mongoose.Schema({
