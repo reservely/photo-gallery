@@ -9,8 +9,9 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static('public'));
 
-app.get('/images', (req, res) => {
-  db.find((err, data) => {
+app.get('/:restaurant_id/images', (req, res) => {
+  const {restaurant_id} = req.params;
+  db.find({ restaurant_id: restaurant_id }, '-_id -__v', (err, data) => {
     if (err) console.log('error');
     res.send(data);
   }).limit(10)
