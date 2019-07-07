@@ -1,28 +1,33 @@
 const Image = require('./image.js');
 const db = require('./index.js');
 
-const sampleurls = [
-  {
-    restaurant_id: 1, 
-    image_url:'https://reversly-photos.s3-us-west-2.amazonaws.com/adult-alcohol-alcoholic-beverage-1850595.jpg'
-  },
-  {
-    restaurant_id: 1, 
-    image_url:'https://reversly-photos.s3-us-west-2.amazonaws.com/bread-cheese-cheese-platter-1893609.jpg'
-  },
-  {
-    restaurant_id: 1, 
-    image_url:'https://reversly-photos.s3-us-west-2.amazonaws.com/celebrate-celebration-cheers-1268558.jpg'
-  } 
-];
+function create() {
+  const arr = [];
+
+  //240 as the limit because there are 239 photos in S3
+  for (let i = 0; i < 240; i++) {
+    let randomInt = Math.floor(Math.random() * Math.floor(101));
+    arr.push({
+      restaurant_id: randomInt,
+      image_url: 'https://reversly-photos.s3-us-west-2.amazonaws.com/' + i + '.jpg'
+    });
+  }
+
+  return arr;
+};
+
+const sampleurls = create();
 
 const insertImages = () => {
   Image.insertMany(sampleurls)
-  .then(() => db.close())
-  .catch(()=> {
-        console.log('error');
-        db.close();
-        });
+    .then(() => {
+      console.log('successfully loaded')
+      db.close();
+    })
+    .catch(() => {
+      console.log('error');
+      db.close();
+    });
 };
-  
+
 insertImages();
