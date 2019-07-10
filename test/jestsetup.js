@@ -4,7 +4,6 @@ import React from 'react';
 
 configure({ adapter: new Adapter() });
 
-
 global.React = React;
 global.shallow = shallow;
 global.render = render;
