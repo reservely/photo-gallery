@@ -1,5 +1,8 @@
 module.exports = {
-    setupFiles: [
-      '<rootDir>/client/test/setupTests.js',
-    ],
-  };
+  setupFiles: [
+    '<rootDir>/test/jestsetup.js',
+  ],
+  moduleNameMapper: {
+    '\\.css$': 'identity-obj-proxy',
+  },
+};

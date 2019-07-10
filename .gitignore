@@ -1,4 +1,9 @@
 node_modules
 package-lock.json
-.eslintrc.js
 config
+client/src/components/Grid.css
+client/src/components/Grid.jsx
+helper/.DS_Store
+something.html
+test/sum.js
+test/sum.test.js
