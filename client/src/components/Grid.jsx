@@ -4,8 +4,12 @@ import LastColumnPics from './LastColumnPics.jsx';
 
 const Grid = ({photos, handleImageClick}) => (
     <div className={styles.wrapper}>
-        <div className={styles.column1}>
-          <div className={styles.box1}><img src="https://www.petmd.com/sites/default/files/petmd-shaking-puppy.jpg" height='124.45' width='124.45' onClick={(event) => {handleImageClick(event)}}/></div>
+        <div className={[styles.column1]}>
+          <div className={[styles.box1]}><img src="https://www.petmd.com/sites/default/files/petmd-shaking-puppy.jpg" height='124.45' width='124.45' onClick={(event) => {handleImageClick(event)}}/></div>
+          <div className={styles.modal}>
+            <span className={styles.close}></span>
+            <img className={styles.modalContent} src="https://www.petmd.com/sites/default/files/petmd-shaking-puppy.jpg" height='124.45' width='124.45' />
+          </div>
           <div className={styles.box2}><img src="https://www.petmd.com/sites/default/files/petmd-shaking-puppy.jpg" height='124.45' width='124.45' onClick={(event) => {handleImageClick(event)}}/></div>
         </div>
         <div className={styles.column2}>
@@ -16,5 +20,3 @@ const Grid = ({photos, handleImageClick}) => (
 );
 
 export default Grid;
-
-
