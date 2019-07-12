@@ -1,10 +1,12 @@
 import React from 'react';
+import axios from 'axios';
 import Grid from './Grid.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      restaurantId: Math.floor(Math.random() * 100),
       photos: ['https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg',
                 'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn',
                 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
@@ -25,6 +27,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    //this.handleImages();
     window.addEventListener('keydown', this.handleKeyPress);
     window.focus();
   }
@@ -32,6 +35,19 @@ class App extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyPress);
   }
+
+  handleImages() {
+    const { restaurantId } = this.state;
+    axios.get(`/${restaurantId}/images`)
+      .then((response) => {
+        const image_url = response.data.map( x => x.image_url);
+        this.setState({ photos: image_url });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
 
   handleKeyPress(event) {
     if(event.keyCode === 37){

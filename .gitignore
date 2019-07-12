@@ -1,4 +1,12 @@
+# dependencies
 node_modules
 package-lock.json
+
+#config
 config
+
+#testing
 coverage
+
+#misc
+.DS_Store
