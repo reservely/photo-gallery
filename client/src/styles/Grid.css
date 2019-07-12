@@ -41,11 +41,46 @@
   color: white;
   font-size: 40px;
   font-weight: bold;
+  font-family: Arial;
   transition: 0.3s;
   cursor: pointer;
 }
 
 .close:hover,
 .close:focus {
+  cursor: pointer;
+}
+
+.left {
+  position: relative;
+  top: 200px;
+  left: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Arial;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.left:hover,
+.left:focus {
+  cursor: pointer;
+}
+
+.right {
+  position: absolute;
+  top: 310px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Arial;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.right:hover,
+.right:focus {
   cursor: pointer;
 }
