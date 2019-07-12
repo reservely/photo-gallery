@@ -1,32 +1,101 @@
 import React from 'react';
+import axios from 'axios';
 import Grid from './Grid.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      photos: ["https://www.petmd.com/sites/default/files/petmd-shaking-puppy.jpg",
-              "https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg",
-              "https://www.telegraph.co.uk/content/dam/Pets/spark/pets-at-home-2017/fluffy-white-puppy.jpg?imwidth=450",
-              "https://cdn2-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg",
-              "https://images.pexels.com/photos/1420405/pexels-photo-1420405.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-              "https://static1.squarespace.com/static/59d7eb2b268b96ed79bacaef/t/5c16a42e562fa7836b336a11/1544987802286/goldendoodle_puppy.jpeg",
-              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5LRtfc2XFHoHkhf3rCa-rVEEJmrj6u83b9Uv0pUbrBmTVObBg",
-              "https://secure.img1-fg.wfcdn.com/im/27616071/compr-r85/3125/31254990/dalmatian-puppy-statue.jpg",
-              "https://pupbox.com/wp-content/themes/pupbox-jb/assets/blog.v2/posts-by-age/puppy-running2.jpg"]
+      restaurantId: Math.floor(Math.random() * 100),
+      photos: ['https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg',
+        'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn',
+        'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+        'https://assets.marthastewart.com/styles/wmax-570/d50/chocolate-labrador-dog-puppy-rubber-duck-503937138/chocolate-labrador-dog-puppy-rubber-duck-503937138_sq.jpg?itok=BKTiHoCu',
+        'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12193133/German-Shepherd-Puppy-Fetch.jpg',
+        'https://s3.amazonaws.com/wmfeimages/wp-content/uploads/2018/09/27182802/4189366235_060e3e8e6f_z.jpg',
+        'https://media2.s-nbcnews.com/j/newscms/2018_20/1339477/puppy-cute-today-180515-main_a936531048fdb698635dd1b418abdee9.fit-760w.jpg',
+        'https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
+        'https://secure.img1-fg.wfcdn.com/im/27616071/compr-r85/3125/31254990/dalmatian-puppy-statue.jpg'  
+      ],
+      modal: false,
+      index: 0,
     };
-
     this.handleImageClick = this.handleImageClick.bind(this);
+    this.onClickForward = this.onClickForward.bind(this);
+    this.onClickBack = this.onClickBack.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
-  handleImageClick(event) {
-    console.log(event.target.value);
+  componentDidMount() {
+    //this.handleImages(); //images takes awhile to load from S3 so commented
+    window.addEventListener('keydown', this.handleKeyPress);
+    window.focus();
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyPress);
+  }
+
+  onClickForward() {
+    const { index, photos } = this.state;
+    if (index + 1 === photos.length) {
+      this.setState({
+        index,
+      });
+    } else {
+      this.setState({
+        index: index + 1,
+      });
+    }
+  }
+
+  onClickBack() {
+    const { index } = this.state;
+    if (index - 1 === -1) {
+      this.setState({
+        index,
+      });
+    } else {
+      this.setState({
+        index: index - 1,
+      });
+    }
+  }
+
+  handleImageClick(e) {
+    const { modal } = this.state;
+    this.setState({
+      modal: !modal,
+      index: e,
+    });
+  }
+
+  handleKeyPress(event) {
+    if (event.keyCode === 37) {
+      this.onClickBack();
+    } else if (event.keyCode === 39) {
+      this.onClickForward();
+    } else if (event.keyCode === 27) {
+      this.setState({ modal: false });
+    }
+  }
+
+  handleImages() {
+    const { restaurantId } = this.state;
+    axios.get(`/${restaurantId}/images`)
+      .then((response) => {
+        const imageURL = response.data.map(x => x.image_url);
+        this.setState({ photos: imageURL });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 
   render() {
+    const { index, photos, modal } = this.state;
     return (
-      <Grid handleImageClick={this.handleImageClick} photos={this.state.photos}/>
+      <Grid handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
     );
   }
 }
