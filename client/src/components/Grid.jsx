@@ -26,7 +26,7 @@ const Grid = ({image, modal, photos, handleImageClick}) => {
           <div className={styles.box8}><img src={imgURL[7]}  height='82.3' width='82.3' onClick={() => {handleImageClick(imgURL[7])}}/></div>
           <div className={styles.box9}><img src={imgURL[8]}  height='82.3' width='82.3' onClick={() => {handleImageClick(imgURL[8])}}/></div>
         </div>
-        {modal && <Modal image={image}/>}
+        {modal && <Modal image={image} handleImageClick={handleImageClick}/>}
       </div>
     )
 };
