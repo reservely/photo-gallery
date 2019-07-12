@@ -2,6 +2,11 @@
   display: flex;
   height: 250.92px;
   width: 546px;
+  position: absolute;
+  /* width: 100%;
+  height: 100%; */
+  justify-content: center;
+  align-items: center; 
 }
 
 .column1, .column2, .column3, .column4 {
@@ -10,22 +15,37 @@
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: block;
+  position: fixed; 
+  z-index: 1;
+  padding-top: 100px; 
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
   background-color: rgba(0,0,0,0.8); 
 }
 
-/* Modal Content (image) */
 .modalContent {
   margin: auto;
   display: block;
   width: auto;
   height: 70%;
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
 }
