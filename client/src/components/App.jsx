@@ -16,19 +16,47 @@ class App extends React.Component {
                 'https://secure.img1-fg.wfcdn.com/im/27616071/compr-r85/3125/31254990/dalmatian-puppy-statue.jpg'  
                 ],
       modal: false,
-      image: '',
+      index: 0,
               }
     this.handleImageClick = this.handleImageClick.bind(this);
+    this.onClickForward = this.onClickForward.bind(this);
+    this.onClickBack = this.onClickBack.bind(this);
   }
 
   handleImageClick(e) {
-    this.setState({modal: !this.state.modal});
-    this.setState({image: e});
+    this.setState({
+                    modal: !this.state.modal, 
+                    index: e
+                  });
+  }
+
+  onClickForward() {
+    if (this.state.index + 1 === this.state.photos.length) {
+      this.setState({
+        index: 0
+      })
+    } else {
+      this.setState({
+        index: this.state.index + 1
+      })
+    }
+  }
+
+  onClickBack() {
+    if (this.state.index - 1 === -1) {
+      this.setState({
+        index: this.state.photos.length - 1
+      })
+    } else {
+      this.setState({
+        index: this.state.index - 1
+      })
+    }
   }
 
   render() {
     return (
-      <Grid photos={this.state.photos} handleImageClick={this.handleImageClick} modal={this.state.modal} image={this.state.image}/>
+      <Grid index={this.state.index} photos={this.state.photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={this.state.modal}/>
     )
   }
 }
