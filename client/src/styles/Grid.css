@@ -1,0 +1,92 @@
+.wrapper {
+  display: flex;
+  height: 250.92px;
+  width: 546px;
+  position: absolute;
+  /* width: 100%;
+  height: 100%; */
+  justify-content: center;
+  align-items: center; 
+}
+
+.column1, .column2, .column3, .column4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal {
+  display: block;
+  position: fixed; 
+  z-index: 1;
+  padding-top: 100px; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8); 
+}
+
+.modalContent {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: 70%;
+}
+
+.close {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Arial;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  cursor: pointer;
+}
+
+.left {
+  position: relative;
+  top: 200px;
+  left: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Arial;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.left:hover,
+.left:focus {
+  cursor: pointer;
+}
+
+.right {
+  position: absolute;
+  top: 310px;
+  right: 50px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: Arial;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.right:hover,
+.right:focus {
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .right {
+    right: 200px;
+  }
+}

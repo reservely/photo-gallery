@@ -1,9 +1,8 @@
-// import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../client/src/components/App.jsx';
+import Gallery from '../client/src/components/Gallery.jsx';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
+  ReactDOM.render(<Gallery />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
