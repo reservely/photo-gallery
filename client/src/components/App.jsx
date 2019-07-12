@@ -21,6 +21,26 @@ class App extends React.Component {
     this.handleImageClick = this.handleImageClick.bind(this);
     this.onClickForward = this.onClickForward.bind(this);
     this.onClickBack = this.onClickBack.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyPress);
+    window.focus();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.handleKeyPress);
+  }
+
+  handleKeyPress(event) {
+    if(event.keyCode === 37){
+      this.onClickBack();
+    } else if (event.keyCode === 39){
+      this.onClickForward();
+    } else if (event.keyCode === 27){
+      this.setState({modal: false});
+    }
   }
 
   handleImageClick(e) {
@@ -33,7 +53,7 @@ class App extends React.Component {
   onClickForward() {
     if (this.state.index + 1 === this.state.photos.length) {
       this.setState({
-        index: 0
+        index: index
       })
     } else {
       this.setState({
@@ -45,7 +65,7 @@ class App extends React.Component {
   onClickBack() {
     if (this.state.index - 1 === -1) {
       this.setState({
-        index: this.state.photos.length - 1
+        index: index
       })
     } else {
       this.setState({
@@ -56,7 +76,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <Grid index={this.state.index} photos={this.state.photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={this.state.modal}/>
+      <Grid handleKeyPress={this.handleKeyPress} index={this.state.index} photos={this.state.photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={this.state.modal}/>
     )
   }
 }

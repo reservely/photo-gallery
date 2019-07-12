@@ -84,3 +84,9 @@
 .right:focus {
   cursor: pointer;
 }
+
+@media (min-width: 600px) {
+  .right {
+    right: 200px;
+  }
+}
