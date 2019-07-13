@@ -1,3 +1,5 @@
+img {max-width:100%;}
+
 .wrapper {
   display: flex;
   height: 265.22px;
@@ -38,14 +40,36 @@
   grid-column-start: 3;
   margin: auto;
   display: flex;
-  max-width: 526px;
-  max-height: 526px;
+  width: 526px;
+  height: 526px;
   justify-content: center;
   align-items: center; 
-  min-width: 236px;
-  min-height: 236px;
-  width: 100%;
-  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: calc(200px - 64px);
+  align-self: center;
+}
+
+
+@media only screen and (min-width:25.0625em) and (max-width:40em) {
+  .modalContent {
+    max-width: 100%;
+    max-height: calc(300px - 64px)
+  }
+}
+
+@media only screen and (min-width:40.0625em) and (max-width:64em) {
+  .modalContent {
+    max-width: 100%;
+    max-height: calc(400px - 64px)
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .modalContent {
+    max-width: 100%;
+    max-height: calc(590px - 64px)
+  }
 }
 
 .close {
