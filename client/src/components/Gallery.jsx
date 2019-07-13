@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Grid from './Grid.jsx';
+import Banner from './Banner.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -98,7 +99,10 @@ class Gallery extends React.Component {
   render() {
     const { index, photos, modal } = this.state;
     return (
+      <div>
+      <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
       <Grid handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
+      </div>
     );
   }
 }
