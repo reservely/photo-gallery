@@ -8,7 +8,7 @@ const Banner = ({handleKeyPress, onClickForward, onClickBack, index, modal, phot
   
   return (
     <div>
-      <div className={[styles.box1]}><img src={imgURL[0]} width='1377' height='306' onClick={() => {handleImageClick(0)}}/></div>
+      <div className={[styles.box1]}><img src={imgURL[9]} width='1377' height='306' onClick={() => {handleImageClick(0)}}/></div>
       {modal && <Modal handleKeyPress={handleKeyPress} onClickForward={onClickForward} onClickBack={onClickBack} index={index} handleImageClick={handleImageClick} imgURL={imgURL} />}
     </div>
   )

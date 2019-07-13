@@ -10,6 +10,11 @@
   margin-left: 30px;
 }
 
+.wrapper:hover,
+.wrapper:focus {
+  cursor: pointer;
+}
+
 .column1, .column2, .column3, .column4 {
   display: flex;
   padding: 2px;
@@ -106,6 +111,11 @@
   font-family: BrandonText;
 }
 
+.box9.hover,
+.box9.focus {
+    background-color: yellow;
+}
+
 .box9 {
   position: relative; 
 }
@@ -120,9 +130,12 @@ h1 {
 }
 
 .flag {
-  grid-column-start: 3;
+  /* grid-column-start: 3;
   grid-row-start: 2;
-  justify-self: end;
+  justify-self: end; */
+  position: absolute;
+  right: 100px;
+  top: 100px;
 }
 
 @font-face {
