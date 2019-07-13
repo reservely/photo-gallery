@@ -24,7 +24,10 @@ const Grid = ({handleKeyPress, onClickForward, onClickBack, index, modal, photos
       <div className={styles.column4}>
         <div className={styles.box7}><img src={imgURL[6]}  height='82.3' width='82.3' onClick={() => {handleImageClick(6)}}/></div>
         <div className={styles.box8}><img src={imgURL[7]}  height='82.3' width='82.3' onClick={() => {handleImageClick(7)}}/></div>
-        <div className={styles.box9}><img src={imgURL[8]}  height='82.3' width='82.3' onClick={() => {handleImageClick(8)}}/></div>
+        <div className={[styles.box9]}>
+          <span className={styles.textBlock}>BOX</span>
+          <img src={imgURL[8]}  height='82.3' width='82.3' onClick={() => {handleImageClick(8)}}/>
+        </div>
       </div>
       {modal && <Modal handleKeyPress={handleKeyPress} onClickForward={onClickForward} onClickBack={onClickBack} index={index} handleImageClick={handleImageClick} imgURL={imgURL} />}
     </div>

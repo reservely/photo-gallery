@@ -105,3 +105,19 @@
   grid-template-columns: 10% 10% auto 10% 10%;
   /* grid-template-rows: 600px; */
 }
+
+.textBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute; 
+  height: 100%;
+  width: 100%; 
+  color: white;
+  text-align: center;
+}
+
+.box9 {
+  position: relative; 
+}
