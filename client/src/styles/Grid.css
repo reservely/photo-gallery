@@ -11,6 +11,10 @@
   margin-bottom: 100px;
 }
 
+#icon {
+  fill: white;
+}
+
 h1 {
   font-family: BrandonText;
   font-size: 24px;
