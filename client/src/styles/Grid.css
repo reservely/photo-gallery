@@ -7,10 +7,21 @@
   align-items: center; 
   /* Just for me to view it easier */
   margin-top: 10px; 
-  margin-left: 30px;
+  margin-left: 350px;
+  margin-bottom: 100px;
+}
+
+h1 {
+  font-family: BrandonText;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 200px; 
+  margin-left: 332px;
+  color: #2d333f;
 }
 
 .wrapper:hover,
+.box0,
 .wrapper:focus {
   cursor: pointer;
 }
@@ -86,6 +97,7 @@
 .left {
   grid-column-start: 2;
   cursor: pointer;
+  justify-self: end;
 }
 
 .left:hover,
@@ -96,6 +108,7 @@
 .right {
   grid-column-start: 4;
   cursor: pointer;
+  justify-self: start;
 }
 
 .right:hover,
@@ -137,22 +150,13 @@
   position: relative; 
 }
 
-h1 {
-  font-family: BrandonText;
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 20px; 
-  margin-left: 10px;
-  color: #2d333f;
-}
-
 .flag {
-  /* grid-column-start: 3;
+  grid-column-start: 4;
   grid-row-start: 2;
-  justify-self: end; */
-  position: absolute;
+  justify-self: start;
+  /* position: absolute;
   right: 360px;
-  bottom: 120px;
+  bottom: 120px; */
 }
 
 @font-face {
