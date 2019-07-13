@@ -1,5 +1,3 @@
-img {max-width:100%;}
-
 .wrapper {
   display: flex;
   height: 265.22px;
@@ -38,16 +36,12 @@ img {max-width:100%;}
 
 .modalContent {
   grid-column-start: 3;
-  margin: auto;
   display: flex;
   width: 526px;
   height: 526px;
   justify-content: center;
   align-items: center; 
   margin: 0 auto;
-  max-width: 100%;
-  max-height: calc(200px - 64px);
-  align-self: center;
 }
 
 
@@ -157,8 +151,8 @@ h1 {
   grid-row-start: 2;
   justify-self: end; */
   position: absolute;
-  right: 100px;
-  top: 100px;
+  right: 360px;
+  bottom: 120px;
 }
 
 @font-face {
