@@ -28,10 +28,15 @@
 }
 
 .modalContent {
+  grid-column-start: 3;
   margin: auto;
   display: block;
   width: auto;
-  height: 70%;
+  height: auto;
+  max-width: 500px;
+  max-height: 500px;
+  /* width: auto;
+  height: 70%; */
 }
 
 .close {
@@ -52,9 +57,10 @@
 }
 
 .left {
-  position: relative;
-  top: 200px;
-  left: 50px;
+  grid-column-start: 2;
+  /* position: relative;
+  left: 50%;
+  top: 50%; */
   color: white;
   font-size: 40px;
   font-weight: bold;
@@ -69,9 +75,10 @@
 }
 
 .right {
-  position: absolute;
-  top: 310px;
-  right: 50px;
+  grid-column-start: 4;
+  /* position: relative;
+  right: 50%;
+  top: 50%; */
   color: white;
   font-size: 40px;
   font-weight: bold;
@@ -85,8 +92,16 @@
   cursor: pointer;
 }
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   .right {
     right: 200px;
   }
+} */
+
+.outsideContainer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 10% 10% auto 10% 10%;
+  /* grid-template-rows: 600px; */
 }
