@@ -111,9 +111,8 @@
   font-family: BrandonText;
 }
 
-.box9.hover,
-.box9.focus {
-    background-color: yellow;
+.textBlock:hover {
+  background-color: rgba(0, 0, 0, .8);
 }
 
 .box9 {
