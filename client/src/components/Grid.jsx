@@ -8,6 +8,7 @@ const Grid = ({handleKeyPress, onClickForward, onClickBack, index, modal, photos
   {photos.map(photo => imgURL.push(photo))};
 
   return (
+    <div><h1>{photos.length} Photos</h1>
     <div className={styles.wrapper}>
       <div className={[styles.column1]}>
         <div className={[styles.box1]}><img src={imgURL[0]} height='138' width='138' onClick={() => {handleImageClick(0)}}/></div>
@@ -30,6 +31,7 @@ const Grid = ({handleKeyPress, onClickForward, onClickBack, index, modal, photos
         </div>
       </div>
       {modal && <Modal handleKeyPress={handleKeyPress} onClickForward={onClickForward} onClickBack={onClickBack} index={index} handleImageClick={handleImageClick} imgURL={imgURL} />}
+    </div>
     </div>
   );
 };

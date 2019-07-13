@@ -3,10 +3,11 @@
   height: 265.22px;
   width: 577px;
   position: absolute;
-  /* width: 100%;
-  height: 100%; */
   justify-content: center;
   align-items: center; 
+  /* Just for me to view it easier */
+  margin-top: 10px; 
+  margin-left: 30px;
 }
 
 .column1, .column2, .column3, .column4 {
@@ -25,7 +26,7 @@
   width: 100%;
   height: 100%; 
   overflow: auto; 
-  background-color: rgba(0,0,0,0.8); 
+  background-color: rgba(0,0,0,0.9); 
 }
 
 .modalContent {
@@ -49,7 +50,7 @@
   color: white;
   font-size: 40px;
   font-weight: bold;
-  font-family: Arial;
+  font-family: BrandonText;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -61,14 +62,6 @@
 
 .left {
   grid-column-start: 2;
-  /* position: relative;
-  left: 50%;
-  top: 50%; */
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: Arial;
-  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -79,14 +72,6 @@
 
 .right {
   grid-column-start: 4;
-  /* position: relative;
-  right: 50%;
-  top: 50%; */
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: Arial;
-  transition: 0.3s;
   cursor: pointer;
 }
 
@@ -104,9 +89,8 @@
 .outsideContainer {
   display: grid;
   align-items: center;
-  justify-items: center;
   grid-template-columns: 10% 10% auto 10% 10%;
-  /* grid-template-rows: 600px; */
+  grid-template-rows: 90% 10%
 }
 
 .textBlock {
@@ -119,8 +103,42 @@
   width: 91px; 
   color: white;
   text-align: center;
+  font-family: BrandonText;
 }
 
 .box9 {
   position: relative; 
 }
+
+h1 {
+  font-family: BrandonText;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 20px; 
+  margin-left: 10px;
+  color: #2d333f;
+}
+
+.flag {
+  grid-column-start: 3;
+  grid-row-start: 2;
+  justify-self: end;
+}
+
+@font-face {
+  font-family: BrandonText;
+  src: url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_reg-webfont.woff2) format('woff2'),url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_reg-webfont.woff) format('woff')
+}
+
+@font-face {
+  font-family: BrandonText;
+  font-weight: 500;
+  src: url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_med-webfont.woff2) format('woff2'),url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_med-webfont.woff) format('woff')
+}
+
+@font-face {
+  font-family: BrandonText;
+  font-weight: 700;
+  src: url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_bld-webfont.woff2) format('woff2'),url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_bld-webfont.woff) format('woff')
+}
+
