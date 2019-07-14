@@ -23,11 +23,13 @@ class Gallery extends React.Component {
       ],
       modal: false,
       index: 0,
+      flag: false,
     };
     this.handleImageClick = this.handleImageClick.bind(this);
     this.onClickForward = this.onClickForward.bind(this);
     this.onClickBack = this.onClickBack.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleFlag = this.handleFlag.bind(this);
   }
 
   componentDidMount() {
@@ -96,12 +98,16 @@ class Gallery extends React.Component {
       });
   }
 
+  handleFlag() {
+    this.setState({flag: !this.state.flag,})
+  }
+
   render() {
-    const { index, photos, modal } = this.state;
+    const { index, photos, modal, flag } = this.state;
     return (
       <div>
       <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
-      <Grid handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
+      <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag}/>
       </div>
     );
   }

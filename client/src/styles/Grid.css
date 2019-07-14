@@ -163,6 +163,16 @@ h1 {
   bottom: 120px; */
 }
 
+.flagbox {
+  margin-left: 470px;
+  position: absolute;
+  /* grid-column-start: 3;
+  grid-row-start: 1;
+  position: absolute;
+  align-items: center;
+  justify-self: center; */
+}
+
 @font-face {
   font-family: BrandonText;
   src: url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_reg-webfont.woff2) format('woff2'),url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_reg-webfont.woff) format('woff')

@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../styles/Grid.css';
 import Modal from './Modal.jsx';
 
-const Grid = ({handleKeyPress, onClickForward, onClickBack, index, modal, photos, handleImageClick}) => {
+const Grid = ({handleFlag, handleKeyPress, onClickForward, onClickBack, index, modal, photos, handleImageClick, flag}) => {
 
   const imgURL = [];
   {photos.map(photo => imgURL.push(photo))};
@@ -30,7 +30,7 @@ const Grid = ({handleKeyPress, onClickForward, onClickBack, index, modal, photos
           <img src={imgURL[8]}  height='91' width='91'/>
         </div>
       </div>
-      {modal && <Modal handleKeyPress={handleKeyPress} onClickForward={onClickForward} onClickBack={onClickBack} index={index} handleImageClick={handleImageClick} imgURL={imgURL} />}
+      {modal && <Modal handleFlag={handleFlag} handleKeyPress={handleKeyPress} onClickForward={onClickForward} onClickBack={onClickBack} index={index} handleImageClick={handleImageClick} imgURL={imgURL} flag={flag}/>}
     </div>
     </div>
   );
