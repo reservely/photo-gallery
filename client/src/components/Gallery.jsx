@@ -18,8 +18,8 @@ class Gallery extends React.Component {
         'https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
         'https://secure.img1-fg.wfcdn.com/im/27616071/compr-r85/3125/31254990/dalmatian-puppy-statue.jpg',
         'https://loremflickr.com/cache/resized/65535_48078364147_e8b2eda580_h_1280_284_nofilter.jpg',
-        '',
-        ''
+        'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12193133/German-Shepherd-Puppy-Fetch.jpg',
+        'https://loremflickr.com/cache/resized/65535_48078364147_e8b2eda580_h_1280_284_nofilter.jpg'
       ],
       modal: false,
       index: 0,

@@ -120,12 +120,6 @@ h1 {
   cursor: pointer;
 }
 
-/* @media (min-width: 600px) {
-  .right {
-    right: 200px;
-  }
-} */
-
 .outsideContainer {
   display: grid;
   align-items: center;
@@ -158,19 +152,11 @@ h1 {
   grid-column-start: 4;
   grid-row-start: 2;
   justify-self: start;
-  /* position: absolute;
-  right: 360px;
-  bottom: 120px; */
 }
 
 .flagbox {
   margin-left: 470px;
   position: absolute;
-  /* grid-column-start: 3;
-  grid-row-start: 1;
-  position: absolute;
-  align-items: center;
-  justify-self: center; */
 }
 
 @font-face {
