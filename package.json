@@ -5,11 +5,13 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "jest",
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
     "seed": "node ./db/seed.js",
-    "build": "npx webpack --config webpack.config.js"
+    "build": "npx webpack --config webpack.config.js",
+    "test": "jest --verbose",
+    "test:watch": "jest --watchAll --verbose",
+    "test:coverage": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",
