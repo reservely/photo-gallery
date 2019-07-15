@@ -7,7 +7,8 @@ class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurantId: Math.floor(Math.random() * 100),
+      restaurantId: 45,
+      //restaurantId: Math.floor(Math.random() * 100),
       photos: ['https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg',
         'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn',
         'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
@@ -33,7 +34,7 @@ class Gallery extends React.Component {
   }
 
   componentDidMount() {
-    //this.handleImages(); //images takes awhile to load from S3 so commented
+    this.handleImages(); //images takes awhile to load from S3 so commented
     window.addEventListener('keydown', this.handleKeyPress);
     window.focus();
   }
