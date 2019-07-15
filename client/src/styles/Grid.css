@@ -1,16 +1,38 @@
 .wrapper {
   display: flex;
-  height: 250.92px;
-  width: 546px;
+  height: 265.22px;
+  width: 577px;
   position: absolute;
-  /* width: 100%;
-  height: 100%; */
   justify-content: center;
   align-items: center; 
+  /* Just for me to view it easier */
+  margin-top: 10px; 
+  margin-left: 350px;
+  margin-bottom: 100px;
+}
+
+#icon {
+  fill: white;
+}
+
+h1 {
+  font-family: BrandonText;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 200px; 
+  margin-left: 332px;
+  color: #2d333f;
+}
+
+.wrapper:hover,
+.box0,
+.wrapper:focus {
+  cursor: pointer;
 }
 
 .column1, .column2, .column3, .column4 {
   display: flex;
+  padding: 2px;
   flex-direction: column;
 }
 
@@ -24,14 +46,39 @@
   width: 100%;
   height: 100%; 
   overflow: auto; 
-  background-color: rgba(0,0,0,0.8); 
+  background-color: rgba(0,0,0,0.9); 
 }
 
 .modalContent {
-  margin: auto;
-  display: block;
-  width: auto;
-  height: 70%;
+  grid-column-start: 3;
+  display: flex;
+  width: 526px;
+  height: 526px;
+  justify-content: center;
+  align-items: center; 
+  margin: 0 auto;
+}
+
+
+@media only screen and (min-width:25.0625em) and (max-width:40em) {
+  .modalContent {
+    max-width: 100%;
+    max-height: calc(300px - 64px)
+  }
+}
+
+@media only screen and (min-width:40.0625em) and (max-width:64em) {
+  .modalContent {
+    max-width: 100%;
+    max-height: calc(400px - 64px)
+  }
+}
+
+@media only screen and (min-width:64.0625em) {
+  .modalContent {
+    max-width: 100%;
+    max-height: calc(590px - 64px)
+  }
 }
 
 .close {
@@ -41,7 +88,7 @@
   color: white;
   font-size: 40px;
   font-weight: bold;
-  font-family: Arial;
+  font-family: BrandonText;
   transition: 0.3s;
   cursor: pointer;
 }
@@ -52,15 +99,9 @@
 }
 
 .left {
-  position: relative;
-  top: 200px;
-  left: 50px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: Arial;
-  transition: 0.3s;
+  grid-column-start: 2;
   cursor: pointer;
+  justify-self: end;
 }
 
 .left:hover,
@@ -69,15 +110,9 @@
 }
 
 .right {
-  position: absolute;
-  top: 310px;
-  right: 50px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  font-family: Arial;
-  transition: 0.3s;
+  grid-column-start: 4;
   cursor: pointer;
+  justify-self: start;
 }
 
 .right:hover,
@@ -85,8 +120,59 @@
   cursor: pointer;
 }
 
-@media (min-width: 600px) {
-  .right {
-    right: 200px;
-  }
+.outsideContainer {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 10% 10% auto 10% 10%;
+  grid-template-rows: 90% 10%
 }
+
+.textBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, .5);
+  position: absolute; 
+  height: 91px;
+  width: 91px; 
+  color: white;
+  text-align: center;
+  font-family: BrandonText;
+}
+
+.textBlock:hover {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.box9 {
+  position: relative; 
+}
+
+.flag {
+  grid-column-start: 4;
+  grid-row-start: 2;
+  justify-self: start;
+}
+
+.flagbox {
+  margin-left: 470px;
+  position: absolute;
+}
+
+@font-face {
+  font-family: BrandonText;
+  src: url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_reg-webfont.woff2) format('woff2'),url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_reg-webfont.woff) format('woff')
+}
+
+@font-face {
+  font-family: BrandonText;
+  font-weight: 500;
+  src: url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_med-webfont.woff2) format('woff2'),url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_med-webfont.woff) format('woff')
+}
+
+@font-face {
+  font-family: BrandonText;
+  font-weight: 700;
+  src: url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_bld-webfont.woff2) format('woff2'),url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_bld-webfont.woff) format('woff')
+}
+

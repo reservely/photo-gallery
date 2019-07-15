@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Grid from './Grid.jsx';
+import Banner from './Banner.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -15,15 +16,20 @@ class Gallery extends React.Component {
         'https://s3.amazonaws.com/wmfeimages/wp-content/uploads/2018/09/27182802/4189366235_060e3e8e6f_z.jpg',
         'https://media2.s-nbcnews.com/j/newscms/2018_20/1339477/puppy-cute-today-180515-main_a936531048fdb698635dd1b418abdee9.fit-760w.jpg',
         'https://images.unsplash.com/photo-1526660690293-bcd32dc3b123?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
-        'https://secure.img1-fg.wfcdn.com/im/27616071/compr-r85/3125/31254990/dalmatian-puppy-statue.jpg'  
+        'https://secure.img1-fg.wfcdn.com/im/27616071/compr-r85/3125/31254990/dalmatian-puppy-statue.jpg',
+        'https://loremflickr.com/cache/resized/65535_48078364147_e8b2eda580_h_1280_284_nofilter.jpg',
+        'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12193133/German-Shepherd-Puppy-Fetch.jpg',
+        'https://loremflickr.com/cache/resized/65535_48078364147_e8b2eda580_h_1280_284_nofilter.jpg'
       ],
       modal: false,
       index: 0,
+      flag: false,
     };
     this.handleImageClick = this.handleImageClick.bind(this);
     this.onClickForward = this.onClickForward.bind(this);
     this.onClickBack = this.onClickBack.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.handleFlag = this.handleFlag.bind(this);
   }
 
   componentDidMount() {
@@ -92,10 +98,17 @@ class Gallery extends React.Component {
       });
   }
 
+  handleFlag() {
+    this.setState({flag: !this.state.flag,})
+  }
+
   render() {
-    const { index, photos, modal } = this.state;
+    const { index, photos, modal, flag } = this.state;
     return (
-      <Grid handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
+      <div>
+      <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
+      <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag}/>
+      </div>
     );
   }
 }
