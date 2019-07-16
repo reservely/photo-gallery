@@ -2,13 +2,16 @@
   display: flex;
   height: 265.22px;
   width: 577px;
-  position: absolute;
+  position: relative;
   justify-content: center;
   align-items: center; 
-  /* Just for me to view it easier */
+  /* Just for me to view it easier 
   margin-top: 10px; 
-  margin-left: 350px;
-  margin-bottom: 100px;
+  /* margin-left: 350px;
+  margin-bottom: 100px; */
+  margin: 8px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #icon {
@@ -19,15 +22,24 @@ h1 {
   font-family: BrandonText;
   font-size: 24px;
   font-weight: 700;
-  margin-top: 200px; 
-  margin-left: 332px;
+  /* margin-top: 200px; 
+  margin-left: 332px; */
   color: #2d333f;
+  margin: 8px;
+  margin-left: 178px;
+  margin-right: auto;
+  margin-left: 332px;
 }
 
 .wrapper:hover,
 .box0,
 .wrapper:focus {
   cursor: pointer;
+}
+
+.box0 {
+  position: relative;
+  left: -87px;
 }
 
 .column1, .column2, .column3, .column4 {
