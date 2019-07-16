@@ -8,7 +8,8 @@ const Grid = ({handleFlag, handleKeyPress, onClickForward, onClickBack, index, m
   {photos.map(photo => imgURL.push(photo))};
 
   return (
-    <div><h1>{photos.length} Photos</h1>
+    <div className={styles.biggerContainer}>
+    <h1 className={styles.heading}>{photos.length} Photos</h1>
     <div className={styles.wrapper}>
       <div className={[styles.column1]}>
         <div className={[styles.box1]}><img src={imgURL[0]} height='138' width='138' onClick={() => {handleImageClick(0)}}/></div>
