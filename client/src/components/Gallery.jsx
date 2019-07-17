@@ -8,7 +8,7 @@ class Gallery extends React.Component {
     super(props);
     this.state = {
       restaurantId: 45,
-      //restaurantId: Math.floor(Math.random() * 100),
+      // restaurantId: Math.floor(Math.random() * 100),
       photos: ['https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg',
         'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn',
         'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
@@ -20,7 +20,7 @@ class Gallery extends React.Component {
         'https://secure.img1-fg.wfcdn.com/im/27616071/compr-r85/3125/31254990/dalmatian-puppy-statue.jpg',
         'https://loremflickr.com/cache/resized/65535_48078364147_e8b2eda580_h_1280_284_nofilter.jpg',
         'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12193133/German-Shepherd-Puppy-Fetch.jpg',
-        'https://loremflickr.com/cache/resized/65535_48078364147_e8b2eda580_h_1280_284_nofilter.jpg'
+        'https://loremflickr.com/cache/resized/65535_48078364147_e8b2eda580_h_1280_284_nofilter.jpg',
       ],
       modal: false,
       index: 0,
@@ -34,7 +34,7 @@ class Gallery extends React.Component {
   }
 
   componentDidMount() {
-    this.handleImages(); //images takes awhile to load from S3 so commented
+    this.handleImages(); // images takes awhile to load from S3 so commented
     window.addEventListener('keydown', this.handleKeyPress);
     window.focus();
   }
@@ -100,15 +100,18 @@ class Gallery extends React.Component {
   }
 
   handleFlag() {
-    this.setState({flag: !this.state.flag,})
+    const { flag } = this.state;
+    this.setState({ flag: !flag });
   }
 
   render() {
-    const { index, photos, modal, flag } = this.state;
+    const {
+      index, photos, modal, flag,
+    } = this.state;
     return (
       <div>
-      <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
-      <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag}/>
+        <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
+        <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag} />
       </div>
     );
   }

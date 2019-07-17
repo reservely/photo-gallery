@@ -2,13 +2,12 @@ const request = require('request');
 const config = require('../config/pexelConfig.js');
 
 const getImages = (callback) => {
-
-  //change page and per_page number
+  // change page and per_page number
   const options = {
-    url: `https://api.pexels.com/v1/search?page=3&query=dining&per_page=80`,
+    url: 'https://api.pexels.com/v1/search?page=3&query=dining&per_page=80',
     headers: {
-      'Authorization': `${config.key}`
-    }
+      Authorization: `${config.key}`,
+    },
   };
 
   request.get(options, (error, response, body) => {

@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import Gallery from '../client/src/components/Gallery.jsx';
 
 describe('Gallery rendering', () => {
-  let wrapper = shallow(<Gallery />);
+  const wrapper = shallow(<Gallery />);
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
@@ -16,19 +16,18 @@ describe('Gallery rendering', () => {
 });
 
 describe('Grid Component', () => {
-
   beforeEach(() => {
     const photos = ['http://www.google.com',
-    'http://www.google.com',
-    'http://www.google.com',
-    'http://www.google.com',
-    'http://www.google.com',
-    'http://www.google.com',
-    'http://www.google.com',
-    'http://www.google.com',
-    'http://www.google.com'
+      'http://www.google.com',
+      'http://www.google.com',
+      'http://www.google.com',
+      'http://www.google.com',
+      'http://www.google.com',
+      'http://www.google.com',
+      'http://www.google.com',
+      'http://www.google.com',
     ];
-    const wrapper = shallow(<Gallery photos={photos}/>);
+    const wrapper = shallow(<Gallery photos={photos} />);
 
     expect(wrapper).toMatchSnapshot();
   });
