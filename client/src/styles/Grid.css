@@ -171,6 +171,30 @@
   position: absolute;
 }
 
+/* .con {
+  margin-right: auto;
+  margin: auto;
+  /* display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+   */
+
+
+/* .par {
+  margin-left: 40px;
+  margin-right: 200px;
+  overflow: hidden;
+  margin: auto;
+  width: 70%;
+  height: 93px;
+  width: 608px; 
+  position: relative;
+  font-family: BrandonText;
+  text-overflow: ellipsis;
+  white-space: wrap;
+} */
+
 @font-face {
   font-family: BrandonText;
   src: url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_reg-webfont.woff2) format('woff2'),url(https://cdn.otstatic.com/common/font/Brandon/Brandon_txt_reg-webfont.woff) format('woff')

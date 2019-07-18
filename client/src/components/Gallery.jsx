@@ -2,13 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import Grid from './Grid.jsx';
 import Banner from './Banner.jsx';
+import Overview from './Overview.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      restaurantId: 45,
-      // restaurantId: Math.floor(Math.random() * 100),
       photos: ['https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg',
         'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn',
         'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
@@ -88,7 +87,8 @@ class Gallery extends React.Component {
   }
 
   handleImages() {
-    const { restaurantId } = this.state;
+    let restaurantId = location.pathname.slice(1);
+    restaurantId = parseInt(restaurantId);
     axios.get(`/${restaurantId}/images`)
       .then((response) => {
         const imageURL = response.data.map(x => x.image_url);
@@ -101,7 +101,7 @@ class Gallery extends React.Component {
 
   handleFlag() {
     const { flag } = this.state;
-    this.setState({ flag: !flag });
+    this.setState({ flag: !flag });   
   }
 
   render() {
