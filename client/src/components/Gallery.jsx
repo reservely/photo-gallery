@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import Grid from './Grid.jsx';
+import Banner from './Banner.jsx';
 import styles from '../styles/Grid.css';
-import Modal from './Modal.jsx';
+import Overview from './Overview.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -111,14 +112,11 @@ class Gallery extends React.Component {
     return (
       <div>
         <img src='navbar.png' />
-        <div className={[styles.box0]}>
-          <img src={photos[1]} width="1440" height="306" onClick={this.handleImageClick} />
-          <div className={styles.save}><img src='save.png' /></div>
+        <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
+        <div className={styles.save}><img src='save.png' /></div>
           <div className={styles.ov}><img src='overviewbar.png' /></div>
           <div className={styles.desc}><img src='desc.png' /></div>
-          <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag} />
-        </div>
-        {modal && <Modal onClick={this.handleKeyPress} onClickForward={this.onClickForward} onClickBack={this.onClickBack} index={index} handleImageClick={this.handleImageClick} imgURL={imgURL} />}
+        <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag} />
       </div>
     );
   }

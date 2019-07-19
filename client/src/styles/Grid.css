@@ -156,10 +156,6 @@
   background-color: rgba(0, 0, 0, .8);
 }
 
-.box9 {
-  position: relative; 
-}
-
 .flag {
   grid-column-start: 4;
   grid-row-start: 2;
@@ -172,7 +168,7 @@
 }
 
 .save {
-  top:10%;
+  top:15%;
   left: 80%;
   position: absolute;
 }

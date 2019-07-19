@@ -12,9 +12,6 @@ const Banner = ({
     <div>
       <div className={[styles.box0]}>
         <img src={imgURL[1]} width="1440" height="306" onClick={() => { handleImageClick(0); }} />
-        <div className={styles.save}><img src='save.png' /></div>
-        <div className={styles.ov}><img src='overviewbar.png' /></div>
-        <div className={styles.desc}><img src='desc.png' /></div>
       </div>
       {modal && <Modal handleKeyPress={handleKeyPress} onClickForward={onClickForward} onClickBack={onClickBack} index={index} handleImageClick={handleImageClick} imgURL={imgURL} />}
     </div>
