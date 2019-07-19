@@ -171,6 +171,25 @@
   position: absolute;
 }
 
+.save {
+  top:10%;
+  left: 80%;
+  position: absolute;
+}
+
+.ov {
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+
+.desc {
+  display: block;
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+
 /* .con {
   margin-right: auto;
   margin: auto;

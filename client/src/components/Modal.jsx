@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactSVG from 'react-svg';
 import styles from '../styles/Grid.css';
+import LeftSVG from '../icons/left.jsx';
+import RightSVG from '../icons/right.jsx';
+import ReportSVG from '../icons/report.jsx';
+import CloseSVG from '../icons/close.jsx';
 
 const Modal = ({
   flag, handleFlag, handleKeyPress, onClickBack, onClickForward, imgURL, index, handleImageClick,
 }) => {
-  const left = '<';
-  const right = '>';
-
-  const link = '';
 
   return (
     <div className={styles.modal}>
-      <span className={styles.close} onClick={() => handleImageClick(event)}><ReactSVG src="close.svg" /></span>
+      <span className={styles.close} onClick={() => handleImageClick(event)}><CloseSVG /></span>
       <div className={styles.outsideContainer}>
-        <span className={styles.left} onClick={() => onClickBack()}><ReactSVG src="left.svg" /></span>
+        <span className={styles.left} onClick={() => onClickBack()}><LeftSVG /></span>
         <img className={styles.modalContent} src={imgURL[index]} height="124.45" width="124.45" onKeyDown={() => handleKeyPress(e)} />
         {
              flag && (
@@ -25,8 +25,8 @@ const Modal = ({
              </span>
              )
         }
-        <span className={styles.right} onClick={() => onClickForward()}><ReactSVG src="right.svg" /></span>
-        <span className={styles.flag} onClick={() => handleFlag()}><ReactSVG src="report.svg" /></span>
+        <span className={styles.right} onClick={() => onClickForward()}><RightSVG /></span>
+        <span className={styles.flag} onClick={() => handleFlag()}><ReportSVG /></span>
       </div>
     </div>
   );
