@@ -156,10 +156,6 @@
   background-color: rgba(0, 0, 0, .8);
 }
 
-.box9 {
-  position: relative; 
-}
-
 .flag {
   grid-column-start: 4;
   grid-row-start: 2;
@@ -170,6 +166,49 @@
   margin-left: 470px;
   position: absolute;
 }
+
+.save {
+  top:15%;
+  left: 80%;
+  position: absolute;
+}
+
+.ov {
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+
+.desc {
+  display: block;
+  position: relative;
+  width: 50%;
+  margin: auto;
+}
+
+/* .con {
+  margin-right: auto;
+  margin: auto;
+  /* display: flex;
+  align-content: center;
+  justify-content: center;
+  margin: auto;
+   */
+
+
+/* .par {
+  margin-left: 40px;
+  margin-right: 200px;
+  overflow: hidden;
+  margin: auto;
+  width: 70%;
+  height: 93px;
+  width: 608px; 
+  position: relative;
+  font-family: BrandonText;
+  text-overflow: ellipsis;
+  white-space: wrap;
+} */
 
 @font-face {
   font-family: BrandonText;

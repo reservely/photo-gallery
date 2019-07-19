@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import Grid from './Grid.jsx';
 import Banner from './Banner.jsx';
+import styles from '../styles/Grid.css';
+import Overview from './Overview.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -109,7 +111,11 @@ class Gallery extends React.Component {
     } = this.state;
     return (
       <div>
+        <img src='navbar.png' />
         <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
+        <div className={styles.save}><img src='save.png' /></div>
+          <div className={styles.ov}><img src='overviewbar.png' /></div>
+          <div className={styles.desc}><img src='desc.png' /></div>
         <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag} />
       </div>
     );
