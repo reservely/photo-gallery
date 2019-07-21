@@ -111,13 +111,8 @@ class Gallery extends React.Component {
     } = this.state;
     return (
       <div>
-        <div > <img className={styles.nav} src='https://reservly-photos.s3-us-west-1.amazonaws.com/navbar.png' />
-        </div>
-        <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
-        <div className={styles.save}><img src='https://reservly-photos.s3-us-west-1.amazonaws.com/save.png' />
-        </div>
         <div className={styles.big}>
-          <div className={styles.ov}><img id={styles.sticky} src='https://reservly-photos.s3-us-west-1.amazonaws.com/overviewbar.png' />
+          <div className={styles.ov}>
           </div>
           <div className={styles.desc}><img src='https://reservly-photos.s3-us-west-1.amazonaws.com/desc.png' />
           </div>

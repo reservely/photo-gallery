@@ -1,7 +1,7 @@
 const AWS = require('aws-sdk');
 const request = require('request');
 const config = require('../config/config.js');
-const pexel = require('./pexel.js');
+const unsplashHelper = require('./unsplashHelper.js');
 
 AWS.config.update({
   accessKeyId: `${config.AWSAccessKeyId}`,
@@ -12,9 +12,10 @@ s3 = new AWS.S3({
   apiVersion: '2006-03-01',
 });
 
-function put_from_url(key, id, callback) {
+function put_from_url(key, url, callback) {
   request({
-    url: `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg`,
+    url: url,
+    //url: `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg`,
     encoding: null,
   }, (err, res, body) => {
     if (err) return callback(err, res);
@@ -28,13 +29,15 @@ function put_from_url(key, id, callback) {
   });
 }
 
+
+
 // manually change the key value
-pexel.getImages((data) => {
-  let key = 160;
+unsplashHelper.getImages('dining', (err, data) => {
+  let key = 210;
   data.forEach((x) => {
     put_from_url(key++, x, (err, info) => {
       if (err) console.log(err);
-      console.log('successful in uploading');
+      console.log(key, 'successful in uploading');
     });
   });
 });
