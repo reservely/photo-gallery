@@ -2,9 +2,9 @@ const Image = require('./image.js');
 const db = require('./index.js');
 const unsplash = require('../helper/unsplashHelper.js');
 
-function create(array) {
+function create() {
   const arr = [];
-  // 29 as the limit because the length of the array
+
   for (let i = 0; i < 99; i++) {
     let count = 0;
 
@@ -12,8 +12,8 @@ function create(array) {
       let randomInt = Math.floor(Math.random() * Math.floor(29));
       arr.push({
         restaurant_id: `${i}`,
-        image_url: array[randomInt],
-        //image_url: `https://reservly-photos.s3-us-west-1.amazonaws.com/${randomInt}.jpg`,
+        //image_url: array[randomInt],
+        image_url: `https://reservly-photos.s3-us-west-1.amazonaws.com/${randomInt}.jpg`,
       });
       count++;
     }
@@ -29,9 +29,12 @@ function create(array) {
   return arr;
 }
 
-unsplash.getImages('dining', (err, data) => {
-    insertImages(create(data));
-});
+
+create()
+
+// unsplash.getImages('dining', (err, data) => {
+//     insertImages(create(data));
+// });
 
 const insertImages = (urls) => {
   Image.insertMany(urls)
@@ -50,4 +53,4 @@ const insertImages = (urls) => {
     });
 };
 
-//insertImages();
+insertImages();

@@ -3,11 +3,13 @@ const morgan = require('morgan');
 const db = require('../db/image.js');
 const path = require('path');
 
+const compression = require('compression')
 const app = express();
 const port = 3001;
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
+app.use(compression())
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/../public/')));

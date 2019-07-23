@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactSVG from 'react-svg';
 import styles from '../styles/Grid.css';
 import LeftSVG from '../icons/left.jsx';
 import RightSVG from '../icons/right.jsx';

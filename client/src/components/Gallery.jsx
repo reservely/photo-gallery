@@ -1,9 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Grid from './Grid.jsx';
-import Banner from './Banner.jsx';
 import styles from '../styles/Grid.css';
-import Overview from './Overview.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
