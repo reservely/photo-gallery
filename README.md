@@ -1,6 +1,6 @@
 # Reservly Photo Gallery
 
-> Module to display photos
+![Dorris's Photo Gallery Demo](https://i.imgur.com/cbXX0gO.mp4)
 
 ## Related Projects
 
