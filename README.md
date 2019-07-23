@@ -1,6 +1,6 @@
 # Reservly Photo Gallery
 
-![Dorris's Photo Gallery Demo](https://i.imgur.com/cbXX0gO.mp4)
+![Dorris's Photo Gallery Demo](https://i.imgur.com/cSoImWQ.gifv)
 
 ## Related Projects
 
