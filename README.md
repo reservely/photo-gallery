@@ -21,7 +21,7 @@
 
 ## Requirements
 
-> Some requirements
+> node
 
 ## Development
 
@@ -31,4 +31,5 @@ From within the root directory:
 
 ```sh
 npm install 
+npm run seed
 ```
