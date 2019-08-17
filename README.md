@@ -1,6 +1,6 @@
 # Reservly Photo Gallery
 
-![dorris image gallery](https://i.imgur.com/cbXX0gO.gif)
+![dorris image gallery](https://media.giphy.com/media/WqR99c4ui9Le1Vzd24/giphy.gif)
 
 ## Related Projects
 
