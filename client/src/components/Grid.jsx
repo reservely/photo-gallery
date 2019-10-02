@@ -11,9 +11,7 @@ const Grid = ({
   return (
     <div className={styles.biggerContainer}>
       <h1 className={styles.heading}>
-        {photos.length}
-        {' '}
-Photos
+        {`${photos.length} Photos`}
       </h1>
       <div className={styles.wrapper}>
         <div className={[styles.column1]}>
