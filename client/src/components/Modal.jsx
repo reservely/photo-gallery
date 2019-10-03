@@ -18,9 +18,7 @@ const Modal = ({
         {
              flag && (
              <span className={styles.flagbox}>
-               {' '}
-               <img src="https://reservly-photos.s3-us-west-1.amazonaws.com/alertbox.png" onClick={() => handleFlag()} />
-               {' '}
+               {`<img src="https://reservly-photos.s3-us-west-1.amazonaws.com/alertbox.png" onClick = {${() => handleFlag()}} />`}
              </span>
              )
         }
