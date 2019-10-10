@@ -10,25 +10,13 @@ describe('Gallery rendering', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('should render Grid child component', () => {
-    expect(wrapper.find(Grid)).toHaveLength(1);
-  });
-});
+  it('calls componentDidMount', () => {
+    jest.spyOn(Gallery.prototype, 'componentDidMount')
+    const wrapper = shallow(<Gallery />)
+    expect(Gallery.prototype.componentDidMount.mock.calls.length).toBe(1)
+  })
 
-describe('Grid Component', () => {
-  beforeEach(() => {
-    const photos = ['http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-    ];
-    const wrapper = shallow(<Gallery photos={photos} />);
-
-    expect(wrapper).toMatchSnapshot();
+  it('should render Gallery child component', () => {
+    expect(wrapper.find(Gallery)).toHaveLength(1);
   });
 });
