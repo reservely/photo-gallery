@@ -1,16 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import Grid from './Grid.jsx';
-import Banner from './Banner.jsx';
 import styles from '../styles/Grid.css';
-import Overview from './Overview.jsx';
 
 class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       photos: ['https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg',
-        'https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA4OC85MTEvb3JpZ2luYWwvZ29sZGVuLXJldHJpZXZlci1wdXBweS5qcGVn',
+        'https://resizer.otstatic.com/v2/photos/wide-huge/25110695.jpg',
         'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
         'https://assets.marthastewart.com/styles/wmax-570/d50/chocolate-labrador-dog-puppy-rubber-duck-503937138/chocolate-labrador-dog-puppy-rubber-duck-503937138_sq.jpg?itok=BKTiHoCu',
         'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12193133/German-Shepherd-Puppy-Fetch.jpg',
@@ -111,12 +109,13 @@ class Gallery extends React.Component {
     } = this.state;
     return (
       <div>
-        <img src='navbar.png' />
-        <Banner handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} />
-        <div className={styles.save}><img src='save.png' /></div>
-          <div className={styles.ov}><img src='overviewbar.png' /></div>
-          <div className={styles.desc}><img src='desc.png' /></div>
-        <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag} />
+        <div className={styles.big}>
+          <div className={styles.ov}>
+          </div>
+          <div className={styles.desc}><img src='https://reservly-photos.s3-us-west-1.amazonaws.com/desc.png' />
+          </div>
+          <Grid handleFlag={this.handleFlag} handleKeyPress={this.handleKeyPress} index={index} photos={photos} onClickForward={this.onClickForward} onClickBack={this.onClickBack} handleImageClick={this.handleImageClick} modal={modal} flag={flag} />
+        </div>
       </div>
     );
   }

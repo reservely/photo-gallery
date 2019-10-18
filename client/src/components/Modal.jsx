@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactSVG from 'react-svg';
 import styles from '../styles/Grid.css';
 import LeftSVG from '../icons/left.jsx';
 import RightSVG from '../icons/right.jsx';
@@ -19,9 +18,7 @@ const Modal = ({
         {
              flag && (
              <span className={styles.flagbox}>
-               {' '}
-               <img src="https://reservly-photos.s3-us-west-1.amazonaws.com/alertbox.png" onClick={() => handleFlag()} />
-               {' '}
+               {`<img src="https://reservly-photos.s3-us-west-1.amazonaws.com/alertbox.png" onClick = {${() => handleFlag()}} />`}
              </span>
              )
         }

@@ -37,9 +37,18 @@
 }
 
 .box0 {
-  position: relative;
-  max-width: 100%;
+  display: flex;
+}
+
+.nav {
+  max-width:100%;
+  height: 110px;
+}
+
+.banner {
+  width: 100%;
   height: 306px;
+  object-fit: cover;
 }
 
 .column1, .column2, .column3, .column4 {
@@ -168,22 +177,31 @@
 }
 
 .save {
-  top:15%;
+  display: flex;
+  top: 150px;
   left: 80%;
   position: absolute;
 }
 
+.save:hover,
+.save:focus {
+  cursor: pointer;
+  border: 2px solid red;
+}
+
 .ov {
   position: relative;
-  width: 50%;
-  margin: auto;
+  top: -43px;
+  display: flex;
+}
+
+.big {
+  margin-right: 23%
 }
 
 .desc {
-  display: block;
-  position: relative;
-  width: 50%;
-  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 /* .con {

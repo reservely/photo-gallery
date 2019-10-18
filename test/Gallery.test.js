@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 import Gallery from '../client/src/components/Gallery.jsx';
+import Grid from '../client/src/components/Grid.jsx';
 
 describe('Gallery rendering', () => {
-  const wrapper = shallow(<Gallery />);
 
   it('renders without crashing', () => {
     const div = document.createElement('div');
@@ -10,25 +10,22 @@ describe('Gallery rendering', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('should render Grid child component', () => {
-    expect(wrapper.find(Grid)).toHaveLength(1);
-  });
-});
+  // it('calls componentDidMount', () => {
+  //   jest.spyOn(Gallery.prototype, 'componentDidMount')
+  //   expect(Gallery.prototype.componentDidMount.mock.calls.length).toBe(1);
+  // })
 
-describe('Grid Component', () => {
-  beforeEach(() => {
-    const photos = ['http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-      'http://www.google.com',
-    ];
-    const wrapper = shallow(<Gallery photos={photos} />);
+  // it('should render 1 Grid child component', () => {
+  //   const wrapper = shallow(<Gallery />);
+  //   expect(wrapper.find(Grid)).toHaveLength(1);
+  // });
 
-    expect(wrapper).toMatchSnapshot();
+  it('simulates click events', () => {
+    const mockCallBack = jest.fn();
+
+    const wrapper = shallow(<Grid photos={photos} onClick={mockCallBack} />);
+    wrapper.find('button').simulate('click');
+    expect(mockCallBack.mock.calls.length).toEqual(1);
+
   });
 });
